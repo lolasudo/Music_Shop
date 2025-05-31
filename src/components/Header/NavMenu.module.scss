@@ -1,0 +1,226 @@
+.menu {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.leftMenu {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+
+.logo {
+  display: flex;
+  align-items: flex-end;
+  width: 144px;
+  height: 22px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.navigation {
+  display: flex;
+}
+
+.navList {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li a {
+    position: relative;
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+    }
+
+    &.active {
+      background-color: rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      font-weight: 600;
+    }
+  }
+}
+
+.rightMenu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.searchForm {
+  display: flex;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 6px 12px;
+  width: 220px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  &:focus-within {
+    background: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.searchInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 14px;
+  padding: 4px 0;
+  margin-right: 8px;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.clearButton {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0 4px;
+  line-height: 1;
+  margin-right: 4px;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.searchButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchIcon {
+  width: 20px;
+  height: 20px;
+  fill: rgba(255, 255, 255, 0.8);
+  transition: fill 0.2s ease;
+
+  &:hover {
+    fill: white;
+  }
+}
+
+.menuButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.menuIcon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.cartButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.cartIcon {
+  width: 24px;
+  height: 24px;
+  fill: white;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.cartBadge {
+  position: absolute;
+  top: -14px;
+  right: -12px;
+  background-color: rgba(255, 255, 255, 0.13);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2px 5px;
+  border-radius: 12px;
+  min-width: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 4px rgba(0,0,0,0.25);
+  border: 2px solid #1a1a1a;
+}
+
+.profileButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.profileIcon {
+  width: 24px;
+  height: 24px;
+  fill: white;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

@@ -1,0 +1,145 @@
+@use '../index.scss' as *;
+
+.cartPage {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: #eee;
+  font-family: var(--font-inter);
+  background: url('../assets/images/BacroungVip.png') center/cover no-repeat;
+  min-height: 100vh;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.title {
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  font-size: 38px;
+  margin-bottom: 50px;
+  text-align: center;
+  color: #ffffff98;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  user-select: none;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+.empty {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  color: #aaa;
+  padding: 100px 0;
+  font-family: var(--font-inter);
+}
+
+.cartList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.12);
+  }
+}
+
+.cartImage {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-right: 30px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+}
+
+.cartDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+
+  h3 {
+    font-size: 20px;
+    color: #eeeeee88;
+    margin: 0;
+  }
+
+  p {
+    font-size: 16px;
+    color: #cccccc98;
+    margin: 0;
+  }
+}
+
+.removeBtn {
+  width: fit-content;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  border-radius: 24px;
+  color: #f0f0f096;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.28);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    color: #fff;
+  }
+}
+
+.cartSummary {
+  margin-top: 40px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
+}
+
+.buttonsWrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.clearBtn,
+.checkoutBtn {
+  width: 180px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  border-radius: 24px;
+  color: #f0f0f096;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.28);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    color: #fff;
+  }
+}

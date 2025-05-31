@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:wght@100..900&display=swap');
+
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-inter);
+  background-color: #000;
+  color: #fff;
+}
+
+h1, h2, h3, h4, .heading {
+  font-family: var(--font-montserrat);
+}
+
+// Контейнер шириной 1440px по центру
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 32px;
+  padding-right: 32px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+// Главная секция десктопа
+.desktop-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Центрируем .container внутри
+  gap: 10px;
+  padding: 0;
+
+  background-color: #000;
+  overflow: hidden;
+  z-index: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+
+    background-image: url('/image/image.png');
+    background-repeat: repeat;
+    background-size: auto;
+    background-position: center;
+
+    opacity: 0.2;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+/* Для Webkit-браузеров */
+::-webkit-scrollbar {
+  width: 12px;            /* ширина вертикального скролла */
+  height: 12px;           /* высота горизонтального скролла */
+  background: transparent; /* прозрачный фон скроллбара */
+}
+
+::-webkit-scrollbar-track {
+  background: #111;       /* фон дорожки скролла — чуть светлее, чем фон */
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #555, #222); /* плавный градиент */
+  border-radius: 8px;
+  border: 3px solid #111; /* отступы, чтобы thumb не сливался с дорожкой */
+  transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #888, #444);
+}
+
+/* Для Firefox */
+* {
+  scrollbar-width: thin;                /* тонкий скроллбар */
+  scrollbar-color: #555 #111;           /* цвет ползунка и дорожки */
+}

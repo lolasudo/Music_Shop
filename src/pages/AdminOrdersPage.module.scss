@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:wght@100..900&display=swap');
+
+.pageWrapper {
+  max-width: 1400px;
+  margin: 60px auto 0;
+  padding: 20px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+  color: white;
+  min-height: calc(100vh - 80px);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../../assets/images/BacroungVip.png');
+    opacity: 0.15;
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(189, 174, 174, 0.593);
+
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0;
+    background: linear-gradient(90deg, #fff 0%, #aaa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.orderList {
+  display: grid;
+  gap: 20px;
+}
+
+.orderCard {
+  background: rgba(30, 30, 30, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.orderHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+
+  .orderNumber {
+    font-weight: 600;
+    color: #fff;
+    font-size: 18px;
+  }
+
+  .orderDate {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+  }
+}
+
+.customerInfo {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 15px;
+
+  p {
+    margin: 5px 0;
+    color: rgba(255, 255, 255, 0.8);
+
+    strong {
+      color: #fff;
+      font-weight: 500;
+      display: inline-block;
+      min-width: 80px;
+    }
+  }
+}
+
+.orderTotal {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 10px 0;
+  color: #fff;
+
+  span {
+    color: #bdb4c2;
+  }
+}
+
+.statusSelect {
+  position: relative;
+  display: inline-block;
+
+  select {
+    appearance: none;
+    padding: 8px 35px 8px 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 180px;
+
+    &:hover {
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  &::after {
+    content: "▼";
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 10px;
+    pointer-events: none;
+  }
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+
+  &::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Адаптив
+@media (max-width: 768px) {
+  .pageWrapper {
+    padding: 15px;
+    margin-top: 20px;
+  }
+
+  .customerInfo {
+    grid-template-columns: 1fr;
+  }
+} 
