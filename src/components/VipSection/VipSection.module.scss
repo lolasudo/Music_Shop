@@ -1,0 +1,266 @@
+.vipSection {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  align-items: center;
+  gap: 60px;
+}
+
+.vipContainer {
+    
+  display: flex;
+  padding: 80px 60px;
+  width: 100%;
+  max-width: 1380px;
+  height: 653px;
+  background: url('../../assets/images/BacroungVip.png') center/cover no-repeat;
+  border-radius: 20px;
+  box-sizing: border-box;
+  position: relative;
+  gap: 40px;
+}
+
+.left {
+  position: relative;
+  width: 640px;
+  height: 493px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+  }
+
+  &::before {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(177deg, rgba(196,196,196,0.6) 3%, rgba(141,141,141,0.6) 54%, rgba(94,94,94,0.6) 97%);
+    left: -30px;
+    top: 30px;
+  }
+
+  &::after {
+    width: 200px;
+    height: 200px;
+    background: rgba(255,242,242,0.33);
+    right: -40px;
+    top: -50px;
+  }
+
+  .ellipseThird {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: linear-gradient(33deg, rgba(196,196,196,0.5) 7%, rgba(141,141,141,0.5) 54%, rgba(94,94,94,0.5) 93%);
+    left: 50px;
+    bottom: -60px;
+    z-index: 0;
+  }
+}
+
+.vipCard {
+  width: 100%;
+  height: 493px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+@keyframes cardSpringRotate {
+  0% {
+    transform: rotateY(0deg) translateY(0);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+  }
+  20% {
+    transform: rotateY(15deg) translateY(-10px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  }
+  40% {
+    transform: rotateY(-10deg) translateY(-5px);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
+  }
+  60% {
+    transform: rotateY(10deg) translateY(-7px);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.35);
+  }
+  80% {
+    transform: rotateY(-5deg) translateY(-3px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    transform: rotateY(0deg) translateY(0);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* Добавим анимацию блика */
+@keyframes shineMove {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.vipCard {
+  perspective: 1000px;
+}
+
+.card {
+  position: absolute;
+  top: 15.8%;
+  bottom: 15.6%;
+  left: 4.2%;
+  right: 4.3%;
+  padding: 20px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 148px;
+  background: linear-gradient(123deg, rgba(255, 255, 255, 0.3) 1%, rgba(153, 153, 153, 0) 99%);
+  border-radius: 41px;
+  backdrop-filter: blur(52px);
+  overflow: hidden; 
+
+  animation: cardSpringRotate 6s ease-in-out infinite;
+
+  /* Блик */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -50%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 0.25) 50%,
+      rgba(255, 255, 255, 0) 70%
+    );
+    pointer-events: none;
+    animation: shineMove 3s linear infinite;
+    border-radius: 41px;
+    z-index: 2;
+  }
+}
+
+.card:hover {
+  animation-play-state: paused;
+  transform: rotateY(0deg) translateY(-10px) scale(1.05);
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+.vipText {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 33px;
+  line-height: 40px;
+  color: rgba(255,255,255,0.1);
+  position: relative;
+  z-index: 3;
+  width: 60px;
+  height: 40px;
+}
+
+.nameText {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 29px;
+  line-height: 35px;
+  color: rgba(255,255,255,0.08);
+  position: relative;
+  z-index: 3;
+  width: 250px;
+  height: 35px;
+  margin-top: -20px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 65px;
+  width: 620px;
+  height: 493px;
+}
+
+.titleVip {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  width: 580px;
+  height: 285px;
+}
+
+.h1_1 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #fff;
+}
+
+.h1_2 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: rgba(255,255,255,0.63);
+  width: 400px;
+  height: 68px;
+}
+
+.vipButton {
+  display: flex;
+  gap: 38px;
+  width: 580px;
+  height: 73px;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  width: 70px;
+  height: 73px;
+  padding: 10px;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  background: transparent;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.button:hover {
+  background-color: rgba(117, 115, 115, 0.285);
+   opacity: 0.7;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.button:active {
+  transform: scale(0.95);
+}
