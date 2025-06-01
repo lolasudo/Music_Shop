@@ -1,4 +1,3 @@
-// app.js
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
@@ -24,9 +23,14 @@ app.use(cors(corsOptions));
 app.use(express.static(path.join(__dirname, '../dist')));
 app.use(express.json());
 
+// 🚀 Определяем правильный URL для БД
+const dbUrl = process.env.NODE_ENV === 'test'
+  ? process.env.TEST_DB_URL
+  : process.env.DB_URL;
+
 // Соединение с БД
-mongoose.connect(process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('Database connected'))
+mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log(`Database connected: ${dbUrl}`))
   .catch((err) => console.error('Database connection error:', err));
 
 // Маршруты
@@ -40,4 +44,4 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
-module.exports = app; // ВАЖНО! Экспортируем app для index.js И для тестов!
+module.exports = app;
